@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rhyansantiago\\Desktop\\C\\Aula_11\\Aula_11.csproj": {}
+    "C:\\Users\\rhyansantiago\\Desktop\\C-sharp\\Aula_11\\Aula_11.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rhyansantiago\\Desktop\\C\\Aula_11\\Aula_11.csproj": {
+    "C:\\Users\\rhyansantiago\\Desktop\\C-sharp\\Aula_11\\Aula_11.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rhyansantiago\\Desktop\\C\\Aula_11\\Aula_11.csproj",
+        "projectUniqueName": "C:\\Users\\rhyansantiago\\Desktop\\C-sharp\\Aula_11\\Aula_11.csproj",
         "projectName": "Aula_11",
-        "projectPath": "C:\\Users\\rhyansantiago\\Desktop\\C\\Aula_11\\Aula_11.csproj",
+        "projectPath": "C:\\Users\\rhyansantiago\\Desktop\\C-sharp\\Aula_11\\Aula_11.csproj",
         "packagesPath": "C:\\Users\\rhyansantiago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rhyansantiago\\Desktop\\C\\Aula_11\\obj\\",
+        "outputPath": "C:\\Users\\rhyansantiago\\Desktop\\C-sharp\\Aula_11\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rhyansantiago\\AppData\\Roaming\\NuGet\\NuGet.Config",

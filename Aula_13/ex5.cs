@@ -5,6 +5,54 @@ namespace Name
 {
     class ex5
     {
+        
+        static void OrdenarMerge(int[] vetor, int inicio, int fim)
+        {
+            if (inicio > fim)
+            {
+                int meio = (inicio + fim) / 2;
+                Ordenar(vetor, inicio, meio);
+                Ordenar(vetor, meio + 1, fim);
+                Intercalar(vetor, inicio, meio, fim);
+            }
+        }
+        
+        static void Intercalar(int[] vetor, int inicio, int meio, int fim)
+        {
+            int[] aux = new int[vetor.Length];
+            for (int j = inicio; j <= fim; j++)
+            {
+                aux[j] = vetor[j];
+            }
+            int i1 = inicio;
+            int i2 = meio + 1;
+            int i3 = inicio;
+
+            while (i1 <= meio && i2 <= fim)
+            {
+                if (aux[i1] < aux[i2])
+                {
+                    vetor[i3] = aux[i1];
+                    i1++;
+                }
+                else
+                {
+                    vetor[i3] = aux[i2];
+                    i3++;
+                }
+                i3++;
+                }
+                while (i1 <= meio)
+                {
+                    vetor[i3] = aux[i1];
+                    i1++;
+                    i3++;;
+                }
+            }
+        
+        
+        
+        
         static void OrdenarBubble(int[] vetor)
             {
                 int aux;
@@ -71,44 +119,61 @@ namespace Name
             }
 
 
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            OrdenarBubble(vetor);
-            stopwatch.Stop();
-            Console.WriteLine("Bubble Sort: " + stopwatch.ElapsedMilliseconds + " ms");
-            long tempo1 = stopwatch.ElapsedMilliseconds;
+            // Criar copias para cada algoritmo
+            int[] bubleArray = (int[])vetor.Clone();
+            int[] selectionArray = (int[])vetor.Clone();
+            int[] insertionArray = (int[])vetor.Clone();
+            int[] MergeArray = (int[])vetor.Clone();
             
-            stopwatch.Reset(); 
-            stopwatch.Start();
-            OrdenarSelection(vetor);
-            stopwatch.Stop();
-            Console.WriteLine("Selection Sort: " + stopwatch.ElapsedMilliseconds + " ms");
-            long tempo2 = stopwatch.ElapsedMilliseconds;
 
-            stopwatch.Reset();
-            stopwatch.Start();
-            OrdenarInsertion(vetor);
-            stopwatch.Stop();
-            long tempo3 = stopwatch.ElapsedMilliseconds;
 
-            Console.WriteLine("Insertion Sort: " + stopwatch.ElapsedMilliseconds + " ms");
+            // Mede o tempo de execução do BubbleSort
+            var inicio = DateTime.Now.Ticks; // Pega o tempo atual em ticks
+            OrdenarBubble(bubleArray);
+            var tempoBubble = DateTime.Now.Ticks - inicio; // Pega o tempo atual em ticks
 
-            if (tempo1 < tempo2 && tempo1 < tempo3)
+            // Mede o tempo de execução do SelectionSort
+            inicio = DateTime.Now.Ticks; // Pega o tempo atual em ticks
+            OrdenarSelection(selectionArray);
+            var tempoSelection = DateTime.Now.Ticks - inicio; // Pega o tempo atual em ticks
+
+            // Mede o tempo de execução do InsertionSort
+            inicio = DateTime.Now.Ticks; // Pega o tempo atual em ticks
+            OrdenarInsertion(insertionArray);
+            var tempoInsertion = DateTime.Now.Ticks - inicio; // Pega o tempo atual em ticks
+            
+            
+            inicio = DateTime.Now.Ticks; // Pega o tempo atual em ticks
+            OrdenarMerge(MergeArray);
+            var tempoMerge = DateTime.Now.Ticks - inicio; // Pega o tempo atual em ticks
+
+
+
+            string melhorAlgoritmo;
+            int[] melhorArray;
+
+            if (tempoBubble < tempoSelection && tempoBubble < tempoInsertion)
             {
-                Console.WriteLine("O Bubble Sort teve o melhor desempenho!");
+                melhorAlgoritmo = "BubbleSort";
+                melhorArray = bubleArray;
             }
-            else if (tempo2 < tempo1 && tempo2 < tempo3)
+            else if (tempoSelection < tempoBubble && tempoSelection < tempoInsertion)
             {
-                Console.WriteLine("O Selection Sort teve o melhor desempenho!");
-            }
-            else if (tempo3 < tempo1 && tempo3 < tempo2)
-            {
-                Console.WriteLine("O Insertion Sort teve o melhor desempenho!");
+                melhorAlgoritmo = "SelectionSort";
+                melhorArray = selectionArray;
             }
             else
             {
-                Console.WriteLine("Os algoritmos tiveram desempenho semelhante.");
+                melhorAlgoritmo = "InsertionSort";
+                melhorArray = insertionArray;
             }
+
+            // Exibe os tempos de execução
+            Console.WriteLine($"Tempo de execução do BubbleSort: {tempoBubble}");
+            Console.WriteLine($"Tempo de execução do SelectionSort: {tempoSelection}");
+            Console.WriteLine($"Tempo de execução do InsertionSort: {tempoInsertion}");
+            Console.WriteLine($"Tempo de execução do MergeSort: {tempoMerge}");
+            Console.WriteLine($"O melhor algoritmo foi o {melhorAlgoritmo}");
         }
     }
 }
