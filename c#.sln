@@ -55,7 +55,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula_19_OO_Relacoes", "Aula
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula_20_OO_Relacoes", "Aula_20_OO_Relacoes\Aula_20_OO_Relacoes.csproj", "{FBB5BA79-3603-40C2-A133-9EFA76767A0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula_20_OO_Relacoes_Exercicio", "Aula_20_OO_Relacoes_Exercicio\Aula_20_OO_Relacoes_Exercicio.csproj", "{F7BFE40D-1287-44C0-906C-2BBF302847CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{4242F5B7-E8BA-446B-A6A1-BCB643B139CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +183,10 @@ Global
 		{F7BFE40D-1287-44C0-906C-2BBF302847CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7BFE40D-1287-44C0-906C-2BBF302847CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7BFE40D-1287-44C0-906C-2BBF302847CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4242F5B7-E8BA-446B-A6A1-BCB643B139CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4242F5B7-E8BA-446B-A6A1-BCB643B139CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4242F5B7-E8BA-446B-A6A1-BCB643B139CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4242F5B7-E8BA-446B-A6A1-BCB643B139CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
